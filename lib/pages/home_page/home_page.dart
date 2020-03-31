@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-
+ 
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -23,10 +23,7 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                 MainCard(),
                 SizedBox(height: 25),
-                Container(
-                  height: 150,
-                  child: ListCountriesData(),
-                ),
+                Container( height: 150, child: ListCountriesData(),),
                 SizedBox(height: 25),
                 ChartCard(),
                 SizedBox(height: 50),

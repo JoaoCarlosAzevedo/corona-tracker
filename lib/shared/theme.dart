@@ -8,7 +8,7 @@ ThemeData _buildDefaultTheme() {
     //brightness: Brightness.light,
     primaryColor:    Color(0xFF181F3D),
     accentColor:     Color(0xFF232C51),
-
+    
     indicatorColor:  Colors.green,
     accentColorBrightness: Brightness.light,
 
@@ -20,15 +20,11 @@ ThemeData _buildDefaultTheme() {
       headline: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.white),
       title:    TextStyle(fontSize: 20.0, fontStyle: FontStyle.normal, color: Colors.grey.shade400),
       subtitle: TextStyle(fontSize: 15.0, fontStyle: FontStyle.italic, color: Colors.brown),
-      body1:    TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+      //body1:    TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
       display1: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold, color: Colors.white),
-      
       display2: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold, color: Colors.red.shade400),
       display3: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold, color: Colors.green.shade500),
     ),
   );
 }
 
-//#302D45 - azul escuro
-//#3A3654 - azul escuro claro
-//#ED3237 - vermelho

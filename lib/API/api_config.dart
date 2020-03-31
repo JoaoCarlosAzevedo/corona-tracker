@@ -1,0 +1,1 @@
+const http_api = "https://coronavirus-19-api.herokuapp.com/";

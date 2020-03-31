@@ -10,22 +10,18 @@ class MainCard extends StatelessWidget {
         color: Theme.of(context).accentColor,
         borderRadius: BorderRadius.all(Radius.circular(35)),
       ),
-      child: _buildChart(context),
+      child: Row(
+        children: <Widget>[
+          Container(
+            width: 200,
+            height: 200,
+            child: PieChartSample2(),
+          ),
+          _textData(context),
+        ],
+      ),
     );
   }
-}
-
-Widget _buildChart(BuildContext context) {
-  return Row(
-    children: <Widget>[
-      Container(
-        width: 200,
-        height: 200,
-        child: PieChartSample2(),
-      ),
-      _textData(context),
-    ],
-  );
 }
 
 Widget _textData(BuildContext context) {
@@ -35,14 +31,36 @@ Widget _textData(BuildContext context) {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Text("Casos", style: Theme.of(context).textTheme.title,),
-          Text("400.000", style: Theme.of(context).textTheme.display1,),
-          SizedBox(height: 15,),
-          Text("Mortes", style: Theme.of(context).textTheme.title,),
-          Text("5.000", style: Theme.of(context).textTheme.display2,),
-          SizedBox(height: 15,),
-          Text("Recuperados", style: Theme.of(context).textTheme.title,),
-          Text("350.000", style: Theme.of(context).textTheme.display3,),
+          Text(
+            "Casos",
+            style: Theme.of(context).textTheme.title,
+          ),
+          Text(
+            "400.000",
+            style: Theme.of(context).textTheme.display1,
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Text(
+            "Mortes",
+            style: Theme.of(context).textTheme.title,
+          ),
+          Text(
+            "5.000",
+            style: Theme.of(context).textTheme.display2,
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Text(
+            "Recuperados",
+            style: Theme.of(context).textTheme.title,
+          ),
+          Text(
+            "350.000",
+            style: Theme.of(context).textTheme.display3,
+          ),
 
           //Text("400.000", style: Theme.of(context).textTheme.display1,),
           //Text("Data1", style: Theme.of(context).textTheme.title,),

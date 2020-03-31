@@ -66,30 +66,30 @@ class PieChart2State extends State {
       switch (i) { 
         case 0:
           return PieChartSectionData(
-            color: const Color(0xff0293ee),
+            color: Colors.red.shade400, //const Color(0xff0293ee),
             value: 40,
             title: '40%',
             radius: radius,
             titleStyle: TextStyle(
-                fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xffffffff)),
+                fontSize: fontSize, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor),
           );
         case 1:
           return PieChartSectionData(
-            color: const Color(0xfff8b250),
+            color: Colors.white, //const Color(0xfff8b250),
             value: 30,
             title: '30%',
             radius: radius,
             titleStyle: TextStyle(
-                fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xffffffff)),
+                fontSize: fontSize, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor),
           );
         case 2:
           return PieChartSectionData(
-            color: const Color(0xff845bef),
+            color: Colors.green.shade500,//const Color(0xff845bef),
             value: 15,
-            title: '15%',
+            title: '15%', 
             radius: radius,
             titleStyle: TextStyle(
-                fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xffffffff)),
+                fontSize: fontSize, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor),
           );
         default:
           return null;

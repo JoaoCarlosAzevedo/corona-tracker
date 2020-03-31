@@ -6,7 +6,7 @@ class CountriesCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(15),
       alignment: Alignment.center,
-      width: 170.0,
+      width: 170.0, 
       decoration: BoxDecoration(
         color: Theme.of(context).accentColor,
         borderRadius: BorderRadius.all(Radius.circular(35)),
