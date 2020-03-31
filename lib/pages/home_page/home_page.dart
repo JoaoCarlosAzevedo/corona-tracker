@@ -1,4 +1,5 @@
 import 'package:corona_tracker/pages/home_page/widgets/bottom_appbar.dart';
+import 'package:corona_tracker/pages/home_page/widgets/chart_card.dart';
 import 'package:corona_tracker/pages/home_page/widgets/float_button.dart';
 import 'package:corona_tracker/pages/home_page/widgets/horizontal_cards.dart';
 import 'package:corona_tracker/pages/home_page/widgets/main_card.dart';
@@ -27,6 +28,9 @@ class _HomePageState extends State<HomePage> {
                   height: 200,
                   child: ListCountriesData(),
                 ),
+                SizedBox(height: 25),
+                ChartCard(),
+                SizedBox(height: 50),
               ],
             ),
           ),
