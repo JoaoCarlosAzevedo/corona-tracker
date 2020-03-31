@@ -18,14 +18,13 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(25.0),
+            padding: const EdgeInsets.all(20.0),
             child: Column(
-
               children: <Widget>[
                 MainCard(),
                 SizedBox(height: 25),
                 Container(
-                  height: 200,
+                  height: 150,
                   child: ListCountriesData(),
                 ),
                 SizedBox(height: 25),

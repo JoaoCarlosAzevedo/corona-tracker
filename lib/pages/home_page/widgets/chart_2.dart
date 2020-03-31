@@ -13,13 +13,13 @@ class BarChartSample3State extends State<BarChartSample3> {
       aspectRatio: 1.7,
       child: Card(
         elevation: 0,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(35)),
         color: Theme.of(context).accentColor,
         child: BarChart(
           BarChartData(
-            alignment: BarChartAlignment.spaceAround,
-            maxY: 25,
-            barTouchData: BarTouchData(
+            alignment: BarChartAlignment.spaceEvenly,
+            maxY: 20,
+            barTouchData: BarTouchData( 
               enabled: false,
               touchTooltipData: BarTouchTooltipData(
                 tooltipBgColor: Colors.transparent,
@@ -47,7 +47,7 @@ class BarChartSample3State extends State<BarChartSample3> {
                 showTitles: true,
                 textStyle: TextStyle(
                     color: const Color(0xff7589a2), fontWeight: FontWeight.bold, fontSize: 14),
-                margin: 20,
+                margin: 10,
                 getTitles: (double value) {
                   switch (value.toInt()) {
                     case 0:

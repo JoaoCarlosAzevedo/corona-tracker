@@ -9,13 +9,13 @@ class ListCountriesData extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       children: <Widget>[
         CountriesCard(),
-        SizedBox(width: 25), 
+        SizedBox(width: 30), 
         CountriesCard(),
-        SizedBox(width: 25),
+        SizedBox(width: 30),
         CountriesCard(),
-        SizedBox(width: 25),
+        SizedBox(width: 30),
         CountriesCard(),
-        SizedBox(width: 25),
+        SizedBox(width: 30),
         CountriesCard(),
       ],
     );

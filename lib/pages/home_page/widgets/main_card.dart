@@ -35,7 +35,7 @@ Widget _textData(BuildContext context) {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Text("Confirmados", style: Theme.of(context).textTheme.title,),
+          Text("Casos", style: Theme.of(context).textTheme.title,),
           Text("400.000", style: Theme.of(context).textTheme.display1,),
           SizedBox(height: 15,),
           Text("Mortes", style: Theme.of(context).textTheme.title,),
