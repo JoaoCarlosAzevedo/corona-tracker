@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomFloatButtom extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
@@ -18,6 +19,6 @@ class CustomFloatButtom extends StatelessWidget {
           size: 50,
         ),
       onPressed: () {},
-    );
+    ); 
   }
 }
