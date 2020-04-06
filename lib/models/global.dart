@@ -1,9 +1,12 @@
+import 'country.dart';
+
 class Global {
   int cases;
   int deaths;
   int recovered;
+  List<Country> countries;
 
-  Global({this.cases, this.deaths, this.recovered});
+  Global({this.cases, this.deaths, this.recovered, this.countries});
 
   Global.fromJson(Map<String, dynamic> json) {
     cases = json['cases'];

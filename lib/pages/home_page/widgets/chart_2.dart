@@ -1,7 +1,10 @@
+import 'package:corona_tracker/models/country.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class BarChartSample3 extends StatefulWidget {
+  final List<Country> countries;
+  BarChartSample3(this.countries);
   @override
   State<StatefulWidget> createState() => BarChartSample3State();
 }
@@ -51,15 +54,15 @@ class BarChartSample3State extends State<BarChartSample3> {
                 getTitles: (double value) {
                   switch (value.toInt()) {
                     case 0:
-                      return 'China';
+                      return widget.countries[0].country;
                     case 1:
-                      return 'EUA';
+                      return widget.countries[1].country;
                     case 2:
-                      return 'Italia';
+                      return widget.countries[2].country;
                     case 3:
-                      return 'Spain';
+                      return widget.countries[3].country;
                     case 4:
-                      return 'German';
+                      return widget.countries[4].country;
                     default:
                       return '';
                   }
@@ -73,23 +76,23 @@ class BarChartSample3State extends State<BarChartSample3> {
             barGroups: [
               BarChartGroupData(
                   x: 0,
-                  barRods: [BarChartRodData(y: 12, color: Colors.lightBlueAccent)],
+                  barRods: [BarChartRodData(y: ((widget.countries[0].deaths / widget.countries[0].cases) * 100), color: Colors.lightBlueAccent)],
                   showingTooltipIndicators: [0]),
               BarChartGroupData(
                   x: 1,
-                  barRods: [BarChartRodData(y: 13, color: Colors.lightBlueAccent)],
+                  barRods: [BarChartRodData(y: (widget.countries[1].deaths / widget.countries[1].cases) * 100, color: Colors.lightBlueAccent)],
                   showingTooltipIndicators: [0]),
               BarChartGroupData(
                   x: 2,
-                  barRods: [BarChartRodData(y: 15, color: Colors.lightBlueAccent)],
+                  barRods: [BarChartRodData(y: (widget.countries[2].deaths / widget.countries[2].cases) * 100, color: Colors.lightBlueAccent)],
                   showingTooltipIndicators: [0]),
               BarChartGroupData(
                   x: 3,
-                  barRods: [BarChartRodData(y: 10, color: Colors.lightBlueAccent)],
+                  barRods: [BarChartRodData(y: (widget.countries[3].deaths / widget.countries[3].cases) * 100, color: Colors.lightBlueAccent)],
                   showingTooltipIndicators: [0]),
               BarChartGroupData(
-                  x: 3,
-                  barRods: [BarChartRodData(y: 9, color: Colors.lightBlueAccent)],
+                  x: 4,
+                  barRods: [BarChartRodData(y: (widget.countries[4].deaths / widget.countries[4].cases) * 100, color: Colors.lightBlueAccent)],
                   showingTooltipIndicators: [0]),
           
             ],

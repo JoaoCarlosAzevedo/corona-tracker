@@ -1,4 +1,6 @@
+import 'package:corona_tracker/stores/global_store.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CustomFloatButtom extends StatelessWidget {
   
@@ -18,7 +20,10 @@ class CustomFloatButtom extends StatelessWidget {
           color: Colors.white,
           size: 50,
         ),
-      onPressed: () {},
+      onPressed: () {
+        final globaDataStore = Provider.of<GlobalApiStore>(context, listen: false);
+        globaDataStore.getGlobalData();
+      },
     ); 
   }
 }
