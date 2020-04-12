@@ -1,10 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:corona_tracker/models/country.dart';
+import 'package:corona_tracker/models/global.dart';
 import 'package:corona_tracker/pages/home_page/widgets/chart_1.dart';
 import 'package:flutter/material.dart';
 
 class MainCard extends StatelessWidget {
-  final Country globalData;
+  final Global globalData;
   MainCard(this.globalData);
 
   @override
@@ -24,13 +24,15 @@ class MainCard extends StatelessWidget {
           ),
           Expanded(
             child: Container(
+             padding: EdgeInsets.all(10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text(
+                  AutoSizeText(
                     "Casos",
                     style: Theme.of(context).textTheme.title,
+                     maxLines: 1,
                   ),
                   AutoSizeText(
                     globalData.cases.toString(),
@@ -40,24 +42,28 @@ class MainCard extends StatelessWidget {
                   SizedBox(
                     height: 15,
                   ),
-                  Text(
+                  AutoSizeText(
                     "Mortes",
                     style: Theme.of(context).textTheme.title,
+                     maxLines: 1,
                   ),
-                  Text(
+                  AutoSizeText(
                     globalData.deaths.toString(),
                     style: Theme.of(context).textTheme.display2,
+                     maxLines: 1,
                   ),
                   SizedBox(
                     height: 15,
                   ),
-                  Text(
+                  AutoSizeText(
                     "Recuperados",
                     style: Theme.of(context).textTheme.title,
+                    maxLines: 1,
                   ),
-                  Text(
+                  AutoSizeText(
                     globalData.recovered.toString(),
                     style: Theme.of(context).textTheme.display3,
+                     maxLines: 1,
                   ),
                 ],
               ),

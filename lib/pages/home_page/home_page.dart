@@ -34,9 +34,11 @@ class _HomePageState extends State<HomePage> {
                 Observer(
                   builder: (_) {
                     switch (_globalDataStore.state) {
-                      case StoreState.initial:
-                        return Text("Nada Aqui",
-                            style: TextStyle(color: Colors.white));
+                      case StoreState.initial: 
+                        return Center(
+                          child: Text("Initial State",
+                              style: TextStyle(color: Colors.white)),
+                        );
                       case StoreState.loading:
                         return LoadingPage(); 
                       case StoreState.loaded:

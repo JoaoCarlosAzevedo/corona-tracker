@@ -18,14 +18,14 @@ mixin _$GlobalApiStore on _GlobalApiStoreBase, Store {
   final _$globalDataAtom = Atom(name: '_GlobalApiStoreBase.globalData');
 
   @override
-  Country get globalData {
+  Global get globalData {
     _$globalDataAtom.context.enforceReadPolicy(_$globalDataAtom);
     _$globalDataAtom.reportObserved();
     return super.globalData;
   }
 
   @override
-  set globalData(Country value) {
+  set globalData(Global value) {
     _$globalDataAtom.context.conditionallyRunInAction(() {
       super.globalData = value;
       _$globalDataAtom.reportChanged();
@@ -91,7 +91,7 @@ mixin _$GlobalApiStore on _GlobalApiStoreBase, Store {
   Future<dynamic> getGlobalData() {
     return _$getGlobalDataAsyncAction.run(() => super.getGlobalData());
   }
- 
+
   @override
   String toString() {
     final string =

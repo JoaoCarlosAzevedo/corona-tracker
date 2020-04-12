@@ -1,1 +1,1 @@
-const http_api = "https://coronavirus-19-api.herokuapp.com/";
+const http_api = "https://corona.lmao.ninja/v2/";

@@ -1,10 +1,10 @@
-import 'package:corona_tracker/models/country.dart';
+import 'package:corona_tracker/models/global.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 
 class PieChartSample2 extends StatefulWidget {
-  final Country globalData;
+  final Global globalData;
 
   PieChartSample2(this.globalData);
 
@@ -62,7 +62,7 @@ class PieChart2State extends State<PieChartSample2> {
     );
   }
 
-  List<PieChartSectionData> showingSections(Country globalData) {
+  List<PieChartSectionData> showingSections(Global globalData) {
     double death    = (globalData.deaths    / globalData.cases) * 100;
     double recoverd = (globalData.recovered / globalData.cases) * 100; 
 

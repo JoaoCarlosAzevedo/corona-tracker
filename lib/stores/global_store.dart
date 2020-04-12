@@ -1,4 +1,5 @@
 import 'package:corona_tracker/models/country.dart';
+import 'package:corona_tracker/models/global.dart';
 import 'package:corona_tracker/repositories/countries_repository.dart';
 import 'package:mobx/mobx.dart';
 
@@ -14,7 +15,7 @@ abstract class _GlobalApiStoreBase with Store {
   _GlobalApiStoreBase(this._globalRepository);
  
   @observable
-  Country globalData; 
+  Global globalData; 
 
   @observable
   List<Country> rankedCountries; 
@@ -34,15 +35,15 @@ abstract class _GlobalApiStoreBase with Store {
       
     }  
   
-  @action
+  @action 
   Future getGlobalData() async {
     try{
       erroMessage = null;
       globalDataFuture =  ObservableFuture(_globalRepository.fetchAllCountries());  
+      globalData      = await _globalRepository.fetchGlobalData();
       var countries   = await globalDataFuture; 
-      globalData      = countries.firstWhere((index)=>index.country.contains('World'));
       countries.sort((a,b) => b.cases.compareTo(a.cases));
-      rankedCountries = countries.skip(1).take(10).toList();
+      rankedCountries = countries.take(10).toList();
     }catch(error) {
       erroMessage = error; 
     }
