@@ -55,7 +55,7 @@ abstract class _GlobalApiStoreBase with Store {
       countries.sort((a, b) => b.cases.compareTo(a.cases));
       rankedCountries = countries.take(10).toList();
     } catch (error) {
-      erroMessage = error;
+      erroMessage = error.toString();
     }
   }
 }

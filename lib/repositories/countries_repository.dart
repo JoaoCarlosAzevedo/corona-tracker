@@ -26,7 +26,7 @@ class ConnectionCountrieslRepository implements CountriesRepository {
     }catch(error) {
       print("Error $error");
 
-      return null;
+      return error;
     }
    
   } 
@@ -44,7 +44,7 @@ class ConnectionCountrieslRepository implements CountriesRepository {
     }catch(error) {
       print("Error $error");
 
-      return null;
+      return error;
     }
    
   } 
@@ -61,7 +61,7 @@ class ConnectionCountrieslRepository implements CountriesRepository {
  
       print("Error $error"); 
 
-      return null;
+      return error;
     }
   } 
 

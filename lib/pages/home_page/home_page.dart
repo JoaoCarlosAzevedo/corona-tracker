@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                         return LoadDataWidgets(_globalDataStore);
                       default:
                         {
-                          return Text("Algum erro",
+                          return Text("Algum erro $_globalDataStore.erroMessage",
                             style: TextStyle(color: Colors.white));
                         }
                     }
@@ -56,13 +56,18 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: CustomBottomAppBar(),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        final globaDataStore = Provider.of<GlobalApiStore>(context, listen: false);
+        globaDataStore.getGlobalData();
+      }),
+      bottomNavigationBar: CustomBottomBar(),
+     /*  bottomNavigationBar: CustomBottomAppBar(),
       floatingActionButton: SizedBox(
         width: 100,
         height: 100,
         child: CustomFloatButtom(),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, */
     );
   }
 }
