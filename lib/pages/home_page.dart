@@ -1,3 +1,4 @@
+import 'package:corona_tracker/pages/countries_page/countries_tab.dart';
 import 'package:corona_tracker/pages/home_page/widgets/bottom_appbar.dart';
 import 'package:corona_tracker/pages/home_page/widgets/loadDataWidgets.dart';
 import 'package:corona_tracker/pages/home_page/widgets/loading_page.dart';
@@ -5,6 +6,8 @@ import 'package:corona_tracker/stores/global_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
+
+import 'home_page/home_tab.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -50,15 +53,9 @@ class _HomePageState extends State<HomePage> {
   getPage(int page) {
     switch (page) {
       case 0:
-        return Center(
-            child: Container(
-          child: _mainPage(),//Text("Home Page"),
-        ));
+        return HomeTab(_globalDataStore);
       case 1:
-        return Center(
-            child: Container(
-          child: Text("Profile Page"),
-        ));
+        return CountriesTab();
       case 2:
         return Center(
             child: Container(

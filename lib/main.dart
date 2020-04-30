@@ -1,4 +1,4 @@
-import 'package:corona_tracker/pages/home_page/home_page.dart';
+import 'package:corona_tracker/pages/home_page.dart';
 import 'package:corona_tracker/repositories/countries_repository.dart';
 import 'package:corona_tracker/shared/theme.dart';
 import 'package:corona_tracker/stores/global_store.dart';

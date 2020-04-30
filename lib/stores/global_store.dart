@@ -5,7 +5,7 @@ import 'package:mobx/mobx.dart';
 
 part 'global_store.g.dart';
 
-enum StoreState { initial, loading, loaded }
+enum StoreState { initial, loading, loaded, error }
 
 class GlobalApiStore = _GlobalApiStoreBase with _$GlobalApiStore;
 
@@ -31,8 +31,7 @@ abstract class _GlobalApiStoreBase with Store {
 
   @computed
   StoreState get state {
-    if (globalDataFuture == null ||
-        globalDataFuture.status == FutureStatus.rejected) {
+    if (globalDataFuture == null) {
         return StoreState.initial;
     }
     if (globalDataFuture.status == FutureStatus.pending) {   
@@ -41,6 +40,9 @@ abstract class _GlobalApiStoreBase with Store {
     if (globalFuture.status == FutureStatus.fulfilled) {
       return StoreState.loaded;
     } 
+    if ( globalDataFuture.status == FutureStatus.rejected ) {
+      return StoreState.error;
+    }
   }
 
   @action
