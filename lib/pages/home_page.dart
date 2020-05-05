@@ -32,9 +32,15 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final globaDataStore = Provider.of<GlobalApiStore>(context, listen: false);
+    globaDataStore.getGlobalData();
+
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      body: getPage(_currentPage),
+      body: RefreshIndicator(
+        child: getPage(_currentPage),
+        onRefresh: _refreshPage,
+      ),
       floatingActionButton: FloatingActionButton(onPressed: () {
         final globaDataStore =
             Provider.of<GlobalApiStore>(context, listen: false);
@@ -62,6 +68,12 @@ class _HomePageState extends State<HomePage> {
           child: Text("Menu Page"),
         ));
     }
+  }
+
+  Future<Null> _refreshPage() async {
+    final globaDataStore = Provider.of<GlobalApiStore>(context, listen: false);
+    await globaDataStore.getGlobalData();
+    return null;
   }
 
   Widget _mainPage() {
@@ -98,4 +110,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
