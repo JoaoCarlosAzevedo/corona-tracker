@@ -9,8 +9,8 @@ class Country {
   int recovered;
   int active;
   int critical;
-  int casesPerOneMillion;
-  int deathsPerOneMillion;
+  double casesPerOneMillion;
+  double deathsPerOneMillion;
   int tests;
   int testsPerOneMillion;
 
@@ -43,8 +43,8 @@ class Country {
     recovered = json['recovered'];
     active = json['active'];
     critical = json['critical'];
-    casesPerOneMillion = json['casesPerOneMillion'];
-    deathsPerOneMillion = json['deathsPerOneMillion'];
+    casesPerOneMillion = json['casesPerOneMillion'].toDouble();
+    deathsPerOneMillion = json['deathsPerOneMillion'].toDouble();
     tests = json['tests'];
     testsPerOneMillion = json['testsPerOneMillion'];
   }

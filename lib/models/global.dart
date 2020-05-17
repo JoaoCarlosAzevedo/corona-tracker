@@ -9,7 +9,7 @@ class Global {
   int active;
   int critical;
   int casesPerOneMillion;
-  int deathsPerOneMillion;
+  double deathsPerOneMillion;
   int tests;
   double testsPerOneMillion;
   int affectedCountries;
@@ -39,7 +39,7 @@ class Global {
     active = json['active'];
     critical = json['critical'];
     casesPerOneMillion = json['casesPerOneMillion'];
-    deathsPerOneMillion = json['deathsPerOneMillion'];
+    deathsPerOneMillion = json['deathsPerOneMillion'].toDouble();
     tests = json['tests'];
     testsPerOneMillion = json['testsPerOneMillion'];
     affectedCountries = json['affectedCountries'];
