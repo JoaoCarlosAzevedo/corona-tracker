@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
       case 0:
         return HomeTab(_globalDataStore);
       case 1:
-        return CountriesTab();
+        return CountriesTab(_globalDataStore);
       case 2:
         return Center(
             child: Container(
