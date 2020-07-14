@@ -8,9 +8,33 @@ class HomeTab extends StatelessWidget {
   GlobalApiStore _globalDataStore;
   HomeTab(this._globalDataStore);
 
-
   @override
-  Widget build(BuildContext context) { 
+  Widget build(BuildContext context) {
+    return Observer(builder: (_) {
+      switch (_globalDataStore.state) {
+        case StoreState.initial:
+          return Center(
+            child: Text("Initial State", style: TextStyle(color: Colors.white)),
+          );
+        case StoreState.loading:
+          return Center(child: LoadingPage());
+        case StoreState.loaded:
+          return _loadDashboard(_globalDataStore);
+        case StoreState.error:
+          return Center(
+            child: Text("Erro na API $_globalDataStore.erroMessage",
+                style: TextStyle(color: Colors.white)),
+          );
+        default:
+          {
+            return Text("Algum erro $_globalDataStore.erroMessage",
+                style: TextStyle(color: Colors.white));
+          }
+      }
+    });
+  }
+
+  Widget _loadDashboard(_globalDataStore) {
     return SafeArea(
       child: SingleChildScrollView(
         child: Padding(
@@ -26,11 +50,11 @@ class HomeTab extends StatelessWidget {
                             style: TextStyle(color: Colors.white)),
                       );
                     case StoreState.loading:
-                      return LoadingPage();
+                      return Center(child: LoadingPage());
                     case StoreState.loaded:
                       return LoadDataWidgets(_globalDataStore);
                     case StoreState.error:
-                      return  Center(
+                      return Center(
                         child: Text("Erro na API $_globalDataStore.erroMessage",
                             style: TextStyle(color: Colors.white)),
                       );

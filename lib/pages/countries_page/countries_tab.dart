@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 class CountriesTab extends StatelessWidget {
-  GlobalApiStore _globalDataStore;
+  final GlobalApiStore _globalDataStore;
   CountriesTab(this._globalDataStore);
 
   @override
@@ -30,7 +30,9 @@ class CountriesTab extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
                         CountryCard(_globalDataStore.rankedCountries[index]),
-                        SizedBox(height: 10,)
+                        SizedBox(
+                          height: 10,
+                        )
                       ],
                     );
                   }); //
