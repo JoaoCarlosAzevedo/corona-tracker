@@ -40,13 +40,16 @@ class _HomePageState extends State<HomePage> {
         onRefresh: _refreshPage,
       ),
       bottomNavigationBar: AnimatedBottomNav(
-          currentIndex: _currentPage,
-          onChange: (index) {
-            setState(() {
-              _currentPage = index;
-            });
-          }),
+        currentIndex: _currentPage,
+        onChange: (index) => changePage(index),
+      ),
     );
+  }
+
+  changePage(int index) {
+    setState(() {
+      _currentPage = index;
+    });
   }
 
   getPage(int page) {
