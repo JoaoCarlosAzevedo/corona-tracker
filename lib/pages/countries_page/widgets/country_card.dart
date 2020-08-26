@@ -3,18 +3,19 @@ import 'package:corona_tracker/models/country.dart';
 import 'package:flutter/material.dart';
 
 class CountryCard extends StatelessWidget {
-
   final Country country;
 
   CountryCard(this.country);
 
   @override
   Widget build(BuildContext context) {
+    var f = new NumberFormat("###.0#", "en_US");
+
     return Container(
       padding: EdgeInsets.all(15),
       alignment: Alignment.center,
       width: 170.0,
-      decoration: BoxDecoration( 
+      decoration: BoxDecoration(
         color: Theme.of(context).accentColor,
         borderRadius: BorderRadius.all(Radius.circular(35)),
       ),
