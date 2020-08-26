@@ -1,6 +1,8 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:corona_tracker/models/country.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:intl/intl.dart';
 
 class CountriesCard extends StatelessWidget {
   final Country country;
@@ -9,11 +11,13 @@ class CountriesCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var numberMask = NumberFormat("###,###,###,###", "pt_BR");
+
     return Container(
       padding: EdgeInsets.all(15),
       alignment: Alignment.center,
       width: 170.0,
-      decoration: BoxDecoration( 
+      decoration: BoxDecoration(
         color: Theme.of(context).accentColor,
         borderRadius: BorderRadius.all(Radius.circular(35)),
       ),
@@ -48,10 +52,10 @@ class CountriesCard extends StatelessWidget {
                 style: Theme.of(context).textTheme.title,
                 textScaleFactor: 0.70,
               ),
-              Text(
-                "${country.cases.toString()}",
+              AutoSizeText(
+                numberMask.format(country.cases),
                 style: Theme.of(context).textTheme.display1,
-                textScaleFactor: 0.60,
+                textScaleFactor: 0.50,
               ),
             ],
           ),
@@ -63,8 +67,8 @@ class CountriesCard extends StatelessWidget {
                 style: Theme.of(context).textTheme.title,
                 textScaleFactor: 0.70,
               ),
-              Text(
-                "${country.deaths.toString()}",
+              AutoSizeText(
+                numberMask.format(country.deaths),
                 style: Theme.of(context).textTheme.display2,
                 textScaleFactor: 0.50,
               ),
@@ -78,8 +82,8 @@ class CountriesCard extends StatelessWidget {
                 style: Theme.of(context).textTheme.title,
                 textScaleFactor: 0.70,
               ),
-              Text(
-                "${country.recovered.toString()}",
+              AutoSizeText(
+                numberMask.format(country.recovered),
                 style: Theme.of(context).textTheme.display3,
                 textScaleFactor: 0.50,
               ),

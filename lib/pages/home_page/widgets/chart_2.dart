@@ -22,7 +22,7 @@ class BarChartSample3State extends State<BarChartSample3> {
           BarChartData(
             alignment: BarChartAlignment.spaceEvenly,
             maxY: 20,
-            barTouchData: BarTouchData( 
+            barTouchData: BarTouchData(
               enabled: false,
               touchTooltipData: BarTouchTooltipData(
                 tooltipBgColor: Colors.transparent,
@@ -48,8 +48,11 @@ class BarChartSample3State extends State<BarChartSample3> {
               show: true,
               bottomTitles: SideTitles(
                 showTitles: true,
+                reservedSize: 30,
                 textStyle: TextStyle(
-                    color: const Color(0xff7589a2), fontWeight: FontWeight.bold, fontSize: 14),
+                    color: const Color(0xff7589a2),
+                    fontWeight: FontWeight.normal,
+                    fontSize: 12),
                 margin: 10,
                 getTitles: (double value) {
                   switch (value.toInt()) {
@@ -74,27 +77,51 @@ class BarChartSample3State extends State<BarChartSample3> {
               show: false,
             ),
             barGroups: [
-              BarChartGroupData(
-                  x: 0,
-                  barRods: [BarChartRodData(y: ((widget.countries[0].deaths / widget.countries[0].cases) * 100), color: Colors.lightBlueAccent)],
-                  showingTooltipIndicators: [0]),
-              BarChartGroupData(
-                  x: 1,
-                  barRods: [BarChartRodData(y: (widget.countries[1].deaths / widget.countries[1].cases) * 100, color: Colors.lightBlueAccent)],
-                  showingTooltipIndicators: [0]),
-              BarChartGroupData(
-                  x: 2,
-                  barRods: [BarChartRodData(y: (widget.countries[2].deaths / widget.countries[2].cases) * 100, color: Colors.lightBlueAccent)],
-                  showingTooltipIndicators: [0]),
-              BarChartGroupData(
-                  x: 3,
-                  barRods: [BarChartRodData(y: (widget.countries[3].deaths / widget.countries[3].cases) * 100, color: Colors.lightBlueAccent)],
-                  showingTooltipIndicators: [0]),
-              BarChartGroupData(
-                  x: 4,
-                  barRods: [BarChartRodData(y: (widget.countries[4].deaths / widget.countries[4].cases) * 100, color: Colors.lightBlueAccent)],
-                  showingTooltipIndicators: [0]),
-          
+              BarChartGroupData(x: 0, barRods: [
+                BarChartRodData(
+                    y: ((widget.countries[0].deaths /
+                            widget.countries[0].cases) *
+                        100),
+                    color: Colors.lightBlueAccent)
+              ], showingTooltipIndicators: [
+                0
+              ]),
+              BarChartGroupData(x: 1, barRods: [
+                BarChartRodData(
+                    y: (widget.countries[1].deaths /
+                            widget.countries[1].cases) *
+                        100,
+                    color: Colors.lightBlueAccent)
+              ], showingTooltipIndicators: [
+                0
+              ]),
+              BarChartGroupData(x: 2, barRods: [
+                BarChartRodData(
+                    y: (widget.countries[2].deaths /
+                            widget.countries[2].cases) *
+                        100,
+                    color: Colors.lightBlueAccent)
+              ], showingTooltipIndicators: [
+                0
+              ]),
+              BarChartGroupData(x: 3, barRods: [
+                BarChartRodData(
+                    y: (widget.countries[3].deaths /
+                            widget.countries[3].cases) *
+                        100,
+                    color: Colors.lightBlueAccent)
+              ], showingTooltipIndicators: [
+                0
+              ]),
+              BarChartGroupData(x: 4, barRods: [
+                BarChartRodData(
+                    y: (widget.countries[4].deaths /
+                            widget.countries[4].cases) *
+                        100,
+                    color: Colors.lightBlueAccent)
+              ], showingTooltipIndicators: [
+                0
+              ]),
             ],
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:corona_tracker/models/country.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class CountryCard extends StatelessWidget {
   final Country country;
@@ -9,7 +10,7 @@ class CountryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var f = new NumberFormat("###.0#", "en_US");
+    var numberMask = NumberFormat("###,###,###,###", "pt_BR");
 
     return Container(
       padding: EdgeInsets.all(15),
@@ -51,7 +52,7 @@ class CountryCard extends StatelessWidget {
                 textScaleFactor: 0.70,
               ),
               Text(
-                "${country.cases.toString()}",
+                numberMask.format(country.cases),
                 style: Theme.of(context).textTheme.display1,
                 textScaleFactor: 0.60,
               ),
@@ -66,7 +67,7 @@ class CountryCard extends StatelessWidget {
                 textScaleFactor: 0.70,
               ),
               Text(
-                "${country.deaths.toString()}",
+                numberMask.format(country.deaths),
                 style: Theme.of(context).textTheme.display2,
                 textScaleFactor: 0.50,
               ),
@@ -81,7 +82,7 @@ class CountryCard extends StatelessWidget {
                 textScaleFactor: 0.70,
               ),
               Text(
-                "${country.recovered.toString()}",
+                numberMask.format(country.recovered),
                 style: Theme.of(context).textTheme.display3,
                 textScaleFactor: 0.50,
               ),
